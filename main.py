@@ -107,12 +107,11 @@ tab1, tab2 = st.tabs(["Plot", "Math"])
 with tab1:
     st.pyplot(fig)
 with tab2:
-    st.latex(r"F_b = \frac{T}{r_w}")
-    st.latex(r"F_{\text{total}} = N_w \cdot F_b")
-    st.latex(r"F_{\text{friction}} = \mu_{\text{max}} \cdot m \cdot g")
-    st.latex(r"F_{\text{effective}} = \min(F_{\text{total}}, F_{\text{friction}})")
-    st.latex(r"\frac{dv}{dt} = -\frac{F_{\text{effective}}}{m}")
+    st.latex(r"m\frac{dv}{dt} = F_{friction}")
+    st.latex(r"F_{friction} = \mu(\lambda)mg")
     st.latex(r"\frac{d\omega}{dt} = -\frac{T}{I_w}")
+    st.latex(r"\lambda = \frac{v-\omega r_{\omega}}{v}")
+    st.latex(r"\mu(\lambda) = \mu_{max} \sin(C \arctan(D\lambda))")
     st.latex(r"d_b = \int_0^{t_{\text{stop}}} v(t) \ dt")
 
 # Display final braking distance
