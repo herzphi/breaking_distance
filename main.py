@@ -107,7 +107,7 @@ tab1, tab2 = st.tabs(["Plot", "Math"])
 with tab1:
     st.pyplot(fig)
 with tab2:
-    st.latex(r"m\frac{dv}{dt} = F_{friction}")
+    st.latex(r"m\frac{dv}{dt} = -F_{friction}")
     st.latex(r"F_{friction} = \mu(\lambda)mg")
     st.latex(r"\frac{d\omega}{dt} = -\frac{T}{I_w}")
     st.latex(r"\lambda = \frac{v-\omega r_{\omega}}{v}")
