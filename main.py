@@ -107,49 +107,13 @@ tab1, tab2 = st.tabs(["Plot", "Math"])
 with tab1:
     st.pyplot(fig)
 with tab2:
-    st.markdown(
-        """
-        The braking dynamics are modeled using the following key equations:
-
-        1. **Slip Ratio**:
-           \[
-           \lambda = \frac{v - \omega r_w}{v}
-           \]
-           - \( v \): Translational velocity of the car.
-           - \( \omega \): Angular velocity of the wheels.
-           - \( r_w \): Radius of the wheels.
-
-        2. **Friction Coefficient**:
-           \[
-           \mu(\lambda) = \mu_{\text{max}} \cdot \sin(C \cdot \arctan(D \cdot \lambda))
-           \]
-           - \( \mu_{\text{max}} \): Maximum friction coefficient.
-           - \( C, D \): Curve shape parameters.
-
-        3. **Translational Deceleration**:
-           \[
-           \frac{dv}{dt} = -\mu(\lambda) \cdot g
-           \]
-           - \( g \): Gravitational acceleration.
-
-        4. **Rotational Deceleration**:
-           \[
-           \frac{d\omega}{dt} = -\frac{T}{I_w}
-           \]
-           - \( T \): Braking torque per wheel.
-           - \( I_w \): Moment of inertia of each wheel.
-
-        5. **Braking Distance**:
-           The braking distance is computed as:
-           \[
-           d = \int_0^{t_{\text{stop}}} v(t) \, dt
-           \]
-           - \( t_{\text{stop}} \): Time when the car comes to rest.
-
-        Using Runge Kutta to solve the non linear differential equations.
-        """
-    )
-
+    st.latex(r"F_b = \frac{T}{r_w}")
+    st.latex(r"F_{\text{total}} = N_w \cdot F_b")
+    st.latex(r"F_{\text{friction}} = \mu_{\text{max}} \cdot m \cdot g")
+    st.latex(r"F_{\text{effective}} = \min(F_{\text{total}}, F_{\text{friction}})")
+    st.latex(r"\frac{dv}{dt} = -\frac{F_{\text{effective}}}{m}")
+    st.latex(r"\frac{d\omega}{dt} = -\frac{T}{I_w}")
+    st.latex(r"d_b = \int_0^{t_{\text{stop}}} v(t) \ dt")
 
 # Display final braking distance
 st.subheader("Results")
