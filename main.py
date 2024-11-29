@@ -19,6 +19,7 @@ mu_max = st.sidebar.number_input(
 )
 C = st.sidebar.number_input("Friction curve shape parameter C", value=1.5, step=0.1)
 D = st.sidebar.number_input("Friction curve shape parameter D", value=1.2, step=0.1)
+st.sidebar.page_link("https://de.mathworks.com/help/sdl/ref/tireroadinteractionmagicformula.html", label="Tire-Road Interaction")
 
 # Initial conditions
 v0 = st.sidebar.number_input(
